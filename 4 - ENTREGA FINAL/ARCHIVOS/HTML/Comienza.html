@@ -1,0 +1,216 @@
+<!DOCTYPE html> {% load crispy_forms_tags %} {% load static %} {% load widget_tweaks %}
+
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Oswald:wght@200&family=Source+Sans+Pro:wght@900&display=swap" rel="stylesheet">
+
+    <title>Comienza</title>
+
+    <meta name="description" content="Ingresar" />
+    <link rel="stylesheet" href="../static/CSS/Saig.css">
+    <link rel="stylesheet" href="../static/CSS/boton_comienza.css">
+    <link rel="stylesheet" href="../static/CSS/boton_cinco.css">
+    <link rel="stylesheet" href="../static/CSS/boton_dos.css">
+    <link rel="stylesheet" href="../static/CSS/objetivos.css">
+    <link rel="stylesheet" href="../static/CSS/style.css">
+
+
+
+
+    <style>
+        .imagen {
+            background-image: url("../static/Imagenes/Comienza.jpg");
+            width: 100%;
+            height: 100%;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        
+        .posicion-cerrar {
+            position: relative;
+            left: 1600px;
+            bottom: 170px;
+        }
+        
+        .posicion-edita {
+            position: relative;
+            left: 1300px;
+            bottom: 253.5px;
+        }
+        
+        .posicion-obj {
+            position: relative;
+            top: 80px;
+            right: 500px;
+        }
+        
+        .text-obj {
+            font-family: 'Oswald', sans-serif;
+            font-size: 40px;
+            position: relative;
+            color: rgb(0, 0, 0);
+        }
+        
+        .mov-tempo {
+            position: relative;
+            top: 100px;
+            left: auto;
+        }
+        
+        .mov-sesiones {
+            position: relative;
+            top: 260px;
+            left: auto;
+        }
+        
+        .mov-start {
+            position: relative;
+            top: 20px;
+            left: 30px;
+        }
+        
+        .mov-reset {
+            position: relative;
+            top: 20px;
+            right: 85px;
+        }
+        
+        .mov-pause {
+            position: relative;
+            top: 20px;
+            right: 200px;
+        }
+        
+        .margen_ss {
+            margin-left: 1000px;
+            margin-right: 200px;
+            margin-top: 40px;
+            margin-bottom: 50px;
+            width: 800px;
+            height: 800px;
+            background-color: #ffffff88;
+        }
+    </style>
+
+</head>
+
+<body class="imagen">
+
+    <header>
+
+        <div class="nombre">
+            {{user.username}}
+        </div>
+
+        <div class="correo">
+            ✉{{user.email}}
+        </div>
+
+        <nav>
+            <div class="posicion-cerrar">
+                <div class="contenedor-botones">
+                    <a href="{% url 'user:Index'%}"><button class="boton cinco">
+                            
+                            <div class="icono">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                                  </svg>
+                            </div>
+                            <span >Cerrar Sesión</span>
+                            
+                        </button></a>
+                </div>
+            </div>
+
+        </nav>
+    </header>
+
+    <!--Lista-->
+    <article>
+        <div class="container">
+            <div class="posicion-obj">
+                <div id="newtask">
+                    <div class="text-obj">Objetivos 📑</div>
+                    <br>
+                    <input type="text" placeholder="...">
+                    <button id="push">AGREGAR</button>
+                </div>
+                <div id="tasks"></div>
+            </div>
+        </div>
+        <script src="../static/JS/objetivos.js"></script>
+
+    </article>
+
+
+    <!--Pomodoro-->
+    <article>
+
+        <div class="margen_ss">
+            <div class="mov-tempo">
+
+                <figure class="clock">
+                    <div class="mins">0</div>
+                    <div>:</div>
+                    <div class="secs">00</div>
+                    <audio src="http://soundbible.com/mp3/service-bell_daniel_simion.mp3"></audio>
+                    <svg class="progress-ring" height="120" width="120">
+              <circle
+                class="progress-ring__circle"
+                stroke-width="8"
+                fill="transparent"
+                r="50"
+                cx="60"
+                cy="60"
+              />
+            </svg>
+
+                </figure>
+
+                <div class="btn-group">
+                    <br><br><br>
+                    <div class="mov-start">
+                        <div class="btx"><button class="start">▶</button></div>
+                    </div>
+                    <div class="mov-reset">
+                        <div class="btx"><button class="reset">⟳</button></div>
+                    </div>
+                    <div class="mov-pause">
+                        <div class="btx"><button class="pause">❚❚</button></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mov-sesiones">
+                <form action=".">
+
+                    <label for="focusTime">Sesión de Estudio</label>
+                    <input type="number" value="1" id="focusTime" />
+                    <label for="breakTime">Sesión de Descanso</label>
+
+                    <input type="number" value="1" id="breakTime" />
+                    <center><button class="boton dos" type="submit">Guardar Configuración</button></center>
+                </form>
+            </div>
+
+            <script src="../static/JS/progress.js"></script>
+            <script src="../static/JS/settings.js"></script>
+            <script src="../static/JS/timer.js"></script>
+
+
+        </div>
+
+    </article>
+
+
+</body>
+
+</html>

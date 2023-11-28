@@ -1,0 +1,119 @@
+<!DOCTYPE html> {% load crispy_forms_tags %} {% load static %} {% load widget_tweaks %}
+
+<html>
+
+<head>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Oswald:wght@200&family=Source+Sans+Pro:wght@900&display=swap" rel="stylesheet">
+
+    <title>Registrarse</title>
+
+    <meta name="description" content="Ingresar" />
+    <link rel="stylesheet" href="../static/CSS/main.css">
+    <link rel="stylesheet" href="../static/CSS/boton_ingresar.css">
+    <link rel="stylesheet" href="../static/CSS/boton_cuatro.css">
+
+    <style>
+        .imagen {
+            background-image: url("../static/Imagenes/Saig.jpg");
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        
+        .margen_cuadrado {
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 100px;
+            margin-bottom: 50px;
+            width: 1400px;
+            height: 1300px;
+            background-color: #ffffff88;
+            opacity: 1;
+        }
+    </style>
+
+    <style>
+        .texto {
+            font-family: 'Oswald', sans-serif;
+            font-size: 48px;
+            color: rgb(0, 0, 0);
+            text-shadow: 2px 2px 4px rgb(36, 36, 36);
+            opacity: 1;
+        }
+        
+        .titulo_ingresar {
+            font-family: 'Courgette', cursive;
+            font-size: 70px;
+            position: relative;
+            color: #466ae0;
+            top: 50px;
+            bottom: 20px;
+            text-shadow: 5px 5px 5px rgb(71, 73, 22);
+        }
+        
+        .posicion_text {
+            position: relative;
+            left: 60px;
+            opacity: 1;
+        }
+        
+        .letra_chica {
+            font-size: 20px;
+        }
+    </style>
+
+
+</head>
+
+<body class="imagen">
+
+    <header>
+        <div class="titulo_ingresar">
+            <center>
+                <legend>
+                    <h1 class="lines-effect">Registrarse
+                    </h1>
+                </legend>
+            </center>
+        </div>
+    </header>
+
+    <div class="margen_cuadrado">
+
+        {% block content %}
+
+        <br><br><br>
+        <div class="container">
+            <div class="posicion_text">
+
+                <form action="" method="POST">
+                    {% csrf_token %}
+
+                    <div class="texto">{{ form|crispy }}</div>
+
+                    <br><br>
+
+                    <div class="form-group" id="signup-button">
+                        <button class="boton cuatro"> Registrarse</button>
+                    </div>
+
+                    <div class="form-group">
+                        <br><br><br>
+                        <div class="texto">
+                            <small class="text muted ml-3"> ¿Ya tienes una cuenta? <a href="{% url 'user:Ingresar'%}"> Inicia Sesion</a></small>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        {% endblock %}
+
+    </div>
+
+</body>
+
+</html>

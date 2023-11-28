@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&display=swap");
+h1 {
+    margin: 15px 0;
+    font-weight: 900;
+    font-size: 28px;
+    text-align: center;
+}
+
+input {
+    transition: 0.5s ease-in-out;
+    margin: 10px 0;
+    font-size: 18px;
+    padding: 5px;
+    background: rgba(0, 0, 0, 0.11);
+    border: none;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10%;
+    margin: 35px 0;
+}
+
+.btx {
+    width: 50px;
+    height: 50px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    font-size: 18px;
+    transition: 0.5s ease-in-out;
+}
+
+form {
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    max-width: 370px;
+    margin: 5px auto;
+}
+
+form .btx {
+    background: rgb(64, 151, 79);
+    width: 100%;
+    margin: 5px 0;
+    color: white;
+}
+
+.start {
+    background: rgb(64, 151, 79);
+    color: white;
+}
+
+.break {
+    background: rgb(64, 151, 79);
+    color: white;
+}
+
+.reset {
+    background: rgb(64, 151, 79);
+    color: #ffffff;
+}
+
+.pause {
+    background: rgb(64, 151, 79);
+    color: white;
+}
+
+.resume {
+    background: rgb(106, 197, 121);
+    color: white;
+}
+
+.clock {
+    padding: 3px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    height: 30%;
+    font-size: 40px;
+}
+
+.progress-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.progress-ring__circle {
+    transition: 0.5s;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    stroke: rgb(255, 153, 0);
+}
+
+.danger {
+    stroke: rgb(255, 153, 0);
+    animation: pulse 0.9s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        transform: rotate(-90deg) scale(1);
+    }
+    50% {
+        transform: rotate(-90deg) scale(1.05);
+    }
+    75% {
+        transform: rotate(-90deg) scale(0.8);
+    }
+}
+
+@media screen and (min-width: 100%) {
+    body {
+        display: grid;
+        grid-template-areas: "head head" "clock form" "btns ji";
+    }
+    .btn-group {
+        grid-area: btns;
+        justify-content: center;
+    }
+    .clock {
+        grid-area: clock;
+        height: 100%;
+    }
+    h1 {
+        grid-area: head;
+        align-self: center;
+    }
+    form {
+        align-self: center;
+        justify-self: center;
+        grid-area: form;
+        width: 100%;
+        justify-content: space-around;
+    }
+    footer {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    form {
+        height: 100%;
+    }
+    footer {
+        position: static;
+    }
+}

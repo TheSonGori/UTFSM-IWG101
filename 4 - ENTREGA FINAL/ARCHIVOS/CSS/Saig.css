@@ -1,0 +1,91 @@
+body {}
+
+.cuadrado_fondo {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: auto;
+    height: 850px;
+    background-color: #8a8b30;
+    box-shadow: 2px 2px 5px rgb(48, 47, 47);
+}
+
+.titulo {
+    font-family: 'Courgette', cursive;
+    font-size: 68px;
+    position: relative;
+    color: #91a52e;
+    top: 50px;
+    text-shadow: 5px 10px 5px rgb(71, 73, 22);
+}
+
+.metodo_letra {
+    font-family: 'Oswald', sans-serif;
+    font-size: 48px;
+    color: rgb(255, 153, 0);
+    text-shadow: 5px 5px 5px rgb(99, 82, 10);
+}
+
+.posicion-yoshi {
+    font-family: 'Courgette', cursive;
+    font-size: 68px;
+    position: relative;
+    color: #91a52e;
+    top: 50px;
+    text-shadow: 5px 10px 5px rgb(71, 73, 22);
+}
+
+h1 {
+    display: inline-block;
+    position: relative;
+}
+
+h1::after,
+h1::before {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 7px;
+    text-shadow: 2px 2px 5px rgb(48, 47, 47);
+    background-color: rgb(240, 154, 26);
+    top: 0.6em;
+}
+
+h1::before {
+    left: -140px;
+}
+
+h1::after {
+    right: -140px;
+}
+
+.class_a_href {
+    pointer-events: none;
+    cursor: default;
+}
+
+header {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    background: rgba(106, 197, 121, 0.486);
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.nombre {
+    font-family: 'Oswald', sans-serif;
+    font-size: 100px;
+    position: relative;
+    left: 60px;
+    color: rgb(0, 0, 0);
+    text-shadow: 5px 5px 5px rgba(17, 75, 30, 0.815);
+}
+
+.correo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 40px;
+    position: relative;
+    font-style: oblique;
+    left: 60px;
+    color: rgb(17, 82, 21);
+}

@@ -1,0 +1,78 @@
+<!doctype html> {% load crispy_forms_tags %} {% load static %} {% load widget_tweaks %}
+
+<html>
+
+<head>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Oswald:wght@200&family=Source+Sans+Pro:wght@900&display=swap" rel="stylesheet">
+
+    <title>Inicio</title>
+
+    <meta name="description" content="Inicio Green Homework" />
+    <link rel="stylesheet" href="../static/CSS/base.css">
+    <link rel="stylesheet" href="../static/CSS/boton.css">
+    <link rel="stylesheet" href="../static/CSS/boton_cinco.css">
+
+    <style>
+        .imagen {
+            background-image: url("../static/Imagenes/Fondo.jpg");
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
+
+</head>
+
+<body class="imagen">
+
+    <header>
+        <div class="titulo">
+            <h1 class="lines-effect"> Green Homework</h1>
+            <div class="metodo_letra">
+                <h2>Método Pomodoro</h2>
+            </div>
+        </div>
+    </header>
+
+    <br><br>
+
+    <div class="contenedor">
+        <div class="contenedor-botones">
+            <a href="{% url 'user:Ingresar'%}"><button class="boton cinco">
+                <div class="icono">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                      </svg>
+                </div>
+                <span>Ingresar</span>
+            </button></a>
+        </div>
+    </div>
+
+    <div class="contenedor">
+        <div class="contenedor-botones">
+            <a href="{% url 'user:Registrarse'%}"><button class="boton cinco">
+                
+                <div class="icono">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                      </svg>
+                </div>
+                <span >Registrarse</span>
+                
+            </button></a>
+        </div>
+    </div>
+
+
+
+
+</body>
+
+
+
+</html>

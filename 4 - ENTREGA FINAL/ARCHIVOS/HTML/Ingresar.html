@@ -1,0 +1,114 @@
+<!DOCTYPE html> {% load crispy_forms_tags %} {% load static %} {% load widget_tweaks %}
+
+
+<html>
+
+<head>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Oswald:wght@200&family=Source+Sans+Pro:wght@900&display=swap" rel="stylesheet">
+
+    <title>Ingresar</title>
+
+    <meta name="description" content="Ingresar" />
+    <link rel="stylesheet" href="../static/CSS/base.css">
+    <link rel="stylesheet" href="../static/CSS/boton_ingresar.css">
+    <link rel="stylesheet" href="../static/CSS/boton_cuatro.css">
+
+    <style>
+        .imagen {
+            background-image: url("../static/Imagenes/Saig.jpg");
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
+
+    <style>
+        .texto {
+            font-family: 'Oswald', sans-serif;
+            font-size: 48px;
+            color: rgb(0, 0, 0);
+            text-shadow: 2px 2px 4px rgb(36, 36, 36);
+        }
+        
+        .titulo_ingresar {
+            font-family: 'Courgette', cursive;
+            font-size: 88px;
+            position: relative;
+            color: #466ae0;
+            top: 50px;
+            text-shadow: 5px 5px 5px rgb(71, 73, 22);
+        }
+        
+        .posicion {
+            position: relative;
+            top: 80px;
+        }
+        
+        .letra_chica {
+            font-size: 20px;
+        }
+    </style>
+
+</head>
+
+<body class="imagen">
+
+    <article>
+        {% block content %}
+
+        <form action="" method="POST">
+
+
+            {% csrf_token %}
+
+            <br>
+            <div class="titulo_ingresar">
+                <legend>
+                    <h1 class="lines-effect">Ingresar
+                    </h1>
+                </legend>
+            </div>
+
+            <br><br><br>
+
+
+            <div class="texto">{{form|crispy}}</div>
+
+
+            <div class="form-group" id="signup-button">
+
+                <button class="boton cuatro"> INICIA </button>
+            </div>
+
+            <br><br>
+
+            <div class="form-group">
+                <div class="texto">
+                    <small class="text-muted ml-3"> ¿Aún no tienes una cuenta? <a href="{% url 'user:Registrarse'%}"> Ingresa aqui</a></small>
+                </div>
+
+                {% endblock %}
+
+    </article>
+
+
+</body>
+
+<div>
+    <div class="container">
+        {% if messages %} {% for message in messages %}
+        <div class="alert-{{message.tags}}">{{message}}</div>
+        {% endfor %} {% endif %}
+    </div>
+
+
+
+</div>
+</div>
+
+</html>
